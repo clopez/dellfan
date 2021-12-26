@@ -76,12 +76,12 @@
 #define GET_FAN              0x00a3
 #define FN_STATUS            0x0025
 
-int init_ioperm(void)
+void init_ioperm(void)
 {
-    if (ioperm(0xb2, 4, 1))
-        perror("ioperm:");
-    if (ioperm(0x84, 4, 1))
-        perror("ioperm:");
+    if (ioperm(0xb2, 4, 1) || ioperm(0x84, 4, 1)) {
+	perror("ioperm");
+	exit(EXIT_FAILURE);
+    }
 }
 
 struct smm_regs {
