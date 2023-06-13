@@ -15,5 +15,6 @@ will override the speed you set unless you disable the BIOS control.
     * On my laptop (E6420), when you disable the BIOS control over the fan some weird things happen:
         * The Fn keys stop working.
         * Suspend to RAM sometimes stops working: The laptop will power itself off instead of suspending.
+            * This happens every time on the M4600. The solution is running `dellfan 0 0` before putting the machine to sleep.
 * Please, if you find a new method of disabling the BIOS control, let me know it.
     * There is a function that allows to discover new codes by proving (use with care).
